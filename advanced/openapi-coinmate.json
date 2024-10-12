@@ -1,0 +1,46 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "title": "Get order book",
+      "description": "Retrieves current order book for given cryptocurrency pair.",
+      "version": "v1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://coinmate.io/api"
+      }
+    ],
+    "paths": {
+      "/orderBook": {
+        "get": {
+          "description": "Get order book for a specific cryptocurrency pair",
+          "operationId": "GetCurrentOrderBook",
+          "parameters": [
+            {
+              "name": "currencyPair",
+              "in": "query",
+              "description": "The cryptocurrency pair to retrieve the order book for",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "groupByPriceLimit",
+              "in": "query",
+              "description": "The boolean True or False value related to cryptocurrency price aggregation",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "default": "False"
+            }
+          ],
+          "deprecated": false
+        }
+      }
+    },
+    "components": {
+      "schemas": {}
+    }
+  }
